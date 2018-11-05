@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:icon="@drawable/ic_add_white_24dp"
+        android:title="@string/menu_item_add_config"
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/import_login"
+                android:title="@string/menu_item_import_config_login"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/import_qrcode"
+                android:title="@string/menu_item_import_config_qrcode"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/import_manually"
+                android:title="@string/menu_item_import_config_manually"
+                app:showAsAction="never" />
+            <!--<item-->
+                <!--android:id="@+id/import_clipboard"-->
+                <!--android:title="@string/menu_item_import_config_clipboard"-->
+                <!--app:showAsAction="never" />-->
+            <!--<item-->
+                <!--android:id="@+id/import_config_custom_local"-->
+                <!--android:title="@string/menu_item_import_config_custom_local"-->
+                <!--app:showAsAction="never" />-->
+            <!--<item-->
+                <!--android:id="@+id/import_config_custom_url"-->
+                <!--android:title="@string/menu_item_import_config_custom_url"-->
+                <!--app:showAsAction="never" />-->
+            <!--<item-->
+                <!--android:id="@+id/import_config_custom_url_scan"-->
+                <!--android:title="@string/menu_item_import_config_custom_url_scan"-->
+                <!--app:showAsAction="never" />-->
+        </menu>
+    </item>
+    <item
+        android:id="@+id/settings"
+        android:icon="@drawable/ic_settings_white_24dp"
+        android:title="@string/title_settings"
+        app:showAsAction="never" />
+    <!--<item-->
+        <!--android:id="@+id/logcat"-->
+        <!--android:icon="@drawable/ic_logcat_white_24dp"-->
+        <!--android:title="@string/title_logcat"-->
+        <!--app:showAsAction="never" />-->
+</menu>
