@@ -19,7 +19,7 @@ public class UdpProxyZerotier {
     final ZeroTier zt = new ZeroTier();
 
     String path = null;
-    long nwid = 0xa09acf7233e4b071L;
+    long nwid = 0x17d709436c911e4fL;
 
     // Test modes
     boolean blocking_start_call = true;
