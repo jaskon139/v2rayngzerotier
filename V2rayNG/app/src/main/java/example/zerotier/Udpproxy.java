@@ -11,15 +11,16 @@ import example.zerotier.UdpProxyZerotier;
 
 public class Udpproxy {
 
-    static UdpProxyZerotier zt = new UdpProxyZerotier();
+    final static UdpProxyZerotier zt = new UdpProxyZerotier();
 
     static InetAddress localaddress = null;
     static int localport = -1;
 
-    public void mainudpproxy(String[] args) {
-        zt.mainZerotier(args);
-        send();
-        receiver();
+    public static void mainudpproxy(String args) {
+        zt.mainZerotier(null);
+        Udpproxy proxy = new Udpproxy();
+        proxy.send();
+        proxy.receiver();
     }
 
     public static void send() {
@@ -48,7 +49,6 @@ public class Udpproxy {
                 }
             }
         }.start();
-        zt.udpstartServerinit();
     }
 
     public static void receiver() {

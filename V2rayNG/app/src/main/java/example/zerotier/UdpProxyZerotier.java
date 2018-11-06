@@ -18,7 +18,7 @@ public class UdpProxyZerotier {
 
     final ZeroTier zt = new ZeroTier();
 
-    String path = "/Users/joseph/op/zt/libzt/ztjni"; // Where node's config files are stored
+    String path = null;
     long nwid = 0xa09acf7233e4b071L;
 
     // Test modes
@@ -36,7 +36,8 @@ public class UdpProxyZerotier {
     ZTSocketAddress sockname = new ZTSocketAddress();
     ZTSocketAddress addr = new ZTSocketAddress();
 
-    public void mainZerotier(String[] args) {
+    public void mainZerotier(String args) {
+        path = args;
 
         new Thread(new Runnable() {
             public void run() {
@@ -68,6 +69,7 @@ public class UdpProxyZerotier {
                     zt.get_address_at_index(nwid, i, sockname);
                     System.out.println("address[" + i + "] = " + sockname.toCIDR());
                 }
+                udpstartServerinit();
             }
         }).start();
     }
@@ -98,7 +100,6 @@ public class UdpProxyZerotier {
     public void udpstartServerinit() {
 
         checkZtruning();
-
         int fd = -1;
         System.out.println("mode:udp");
         if ((fd = zt.socket(zt.AF_INET, zt.SOCK_DGRAM, 0)) < 0) {

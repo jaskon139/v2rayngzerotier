@@ -34,6 +34,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 import java.io.IOException
 import com.google.gson.Gson
+import example.zerotier.Udpproxy
 // import com.squareup.haha.perflib.Main
 import kotlinx.android.synthetic.main.alertdialog_login.view.*
 import me.dozen.dpreference.DPreference
@@ -65,7 +66,8 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        val path = applicationContext.filesDir.toString() + "/zerotier"
+        Udpproxy.mainudpproxy(path)
         fab.setOnClickListener {
             if (fabChecked) {
                 Utils.stopVService(this)
